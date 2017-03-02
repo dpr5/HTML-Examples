@@ -1,0 +1,13 @@
+body {
+    background-color: lightblue;
+}
+
+h2 {
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom : 50px;
+}
+
+#searchImage{
+    text-align: center;
+}
