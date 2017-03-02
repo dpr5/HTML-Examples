@@ -8,7 +8,7 @@
 <body>
 
   <div>
-    <h2>Display Images</h2>
+    <h2>Display Images from API</h2>
     <ul id="images" />
   </div>
 
@@ -22,6 +22,10 @@
     <input type="button" value="Search" onclick="find();" />
     <p id="product" />
   </div> 
+
+    <div id ="secondlayer"></div>
+
+    <div id ="thirdlayer"></div>
  
 </body>
 </html>
