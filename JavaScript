@@ -1,6 +1,6 @@
 
 //url for API location
-var url = 'api/products';
+var url = 'https://en.wikipedia.org/w/api.php';
 
 var slideIndex = 0;
 
