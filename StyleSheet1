@@ -8,6 +8,24 @@ h2 {
     padding-bottom : 50px;
 }
 
+#images{
+    background-color: white;
+    padding-top: 50px;
+    padding-bottom : 50px;
+}
+
 #searchImage{
     text-align: center;
+}
+
+#secondlayer{
+    background-color: white;
+    padding-top: 50px;
+    padding-bottom : 50px;
+}
+
+#thirdlayer{
+    background-color: white;
+    padding-top: 50px;
+    padding-bottom : 50px;
 }
