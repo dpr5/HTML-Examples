@@ -17,7 +17,7 @@ $(document).ready(function () {
 });
 
 function formatItem(item) {
-    return item.Name + ': $' + item.Price;
+    return item.Name + ': $' + item.id;
 }
 
 function find() {
