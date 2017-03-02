@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="JavaScript.js"></script>
+    <link href="StyleSheet1.css" rel="stylesheet" />
+  <title>Sentient Challenge</title>
+</head>
+<body>
+
+  <div>
+    <h2>Display Images</h2>
+    <ul id="images" />
+  </div>
+
+    <div id="image-display-container">
+
+    </div>
+
+  <div id = "searchImage">
+    <h2>Search for images</h2>
+    <input type="text" id="prodId" size="5" />
+    <input type="button" value="Search" onclick="find();" />
+    <p id="product" />
+  </div> 
+ 
+</body>
+</html>
