@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+<script type="text/javascript"></script>
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+<script>
+window.onload = function() {
+
+  var url = "https://seeclickfix.com/open311/v2/29/requests.json";
+
+  $.ajax({
+    dataType: "jsonp",
+    url: url,
+    success: success
+  });
+}
+
+function success(e) {
+
+  var result = "";
+  $.each(e, function(index, value) 
+  {
+    result += "<h3>" + value.address + "</h3>";
+    result += "<h3>" + value.agency_responsible + "</h3>";
+  });
+
+  $('#result').html(result);
+}
+
+
+</script>
+
+
+</head>
+
+<body>
+
+<div id="container">
+
+<h1>Air Lines</h1>
+
+<div id="result"></div>
+
+</div>
+
+</body>
+
+</html>
