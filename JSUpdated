@@ -1,0 +1,26 @@
+window.onload = function() {
+
+  var url = "https://api.digitalmedia.hhs.gov/api/v2/resources/campaigns.json";
+
+  $.ajax({
+    dataType: "json",
+    url: url,
+    success: success
+  });
+}
+
+function success(e) {
+
+  var results = " ";
+  $.each(e, function(index, data) {
+
+    //get data from public API web and put it into code
+    //$.getJSON(url, function(index, data) {
+    results += "<h3>" + data.id + "</h3>"
+    results += "<h3>" + data.description + "</h3>"
+    results += "<h3>" + data.contactEmail + "</h3>"
+    results += "<h3>" + data.startDate + "</h3>"
+  });
+
+  $('#result').html(result);
+}
