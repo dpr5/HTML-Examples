@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<!-- ==============================================JavaScript ================================================================== -->
+
+<script type="text/javascript"></script>
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+<script>
+window.onload = function() {
+
+  var url = "https://seeclickfix.com/open311/v2/29/requests.json";
+
+  $.ajax({
+    dataType: "jsonp",
+    url: url,
+    success: success
+  });
+}
+
+function success(e) {
+
+  var result = "";
+  var zip = "";
+  var input = $("#zipCode").val();
+  
+  $.each(e, function(index, value) 
+  {
+	result += "<h3>" + value.address + "</h3>";
+	result += "<p>" + value.zipcode + "</p>";
+	result += "<p>" + value.description + "</p>";
+	result += "<p><img src =" + value.media_url + "/></p>";
+	zip += value.zipcode;
+  
+  });
+
+  $('#result').html(result);
+  $('#inputContainer').html(zipcode);
+}
+
+</script>
+
+<!-- ==============================================JavaScript ================================================================== -->
+
+</head>
+
+<body>
+
+<div id="inputContainer">
+
+    <h3>Enter Zipcode</h3>
+<input type="text" id="zipCode" value="">
+
+<button onclick="clickFunction()">Enter</button>
+
+<p id="demo"></p>
+
+</div>
+<div id="container">
+
+<h1>City of New Haven</h1>
+
+<div id="result"></div>
+
+</div>
+
+</body>
+
+<!-- ==============================================Style Sheet================================================================== -->
+
+<style>
+
+body{
+	background-color: lightblue;
+	border: 1px solid black;
+    margin: 10px;
+    float: left;
+    padding: 30px;
+    text-align: center;
+    background-color: lightgray;
+}
+
+h3{
+	text-align: center;
+}
+
+#inputContainer{
+	text-align: center;
+	background-color: white;
+	padding-top:50px;
+	padding-bottom:50px;
+}
+
+#result {
+    border: 1px solid black;
+    margin: 10px;
+    float: left;
+    padding: 30px;
+    text-align: center;
+    background-color: lightgray;
+}
+
+</style>
+
+</html>
