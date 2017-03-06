@@ -3,6 +3,7 @@
 <head>
 
 
+
 <script type="text/javascript"></script>
 <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 
@@ -11,6 +12,12 @@
 window.onload = function() {
 
   var url = "https://seeclickfix.com/open311/v2/29/requests.json";
+  var lat = "?lat="+ latInput;
+  var lon = "&long=" + lonInput;
+  var latInput="";
+  var lonInput="";
+  var newURL = url + lat + lon
+  
 
   $.ajax({
     dataType: "jsonp",
@@ -19,17 +26,29 @@ window.onload = function() {
   });
 }
 
+
 function success(e) {
 
   var result = "";
+  
   $.each(e, function(index, value) 
   {
-    result += "<h3>" + value.address + "</h3>";
-    result += "<h3>" + value.agency_responsible + "</h3>";
+	result += "<h3>" + value.address + "</h3>";
+	result += "<p>" + value.zipcode + "</p>";
+	result += "<p>" + value.description + "</p>";
+	result += "<p><img src= '"+value.media_url+"'/></p>";
   });
 
   $('#result').html(result);
 }
+
+function submitBtn()
+	{
+		var latInput = $("#lat").val();
+		var lonInput = $("#lon").val();
+	};
+
+
 
 
 </script>
@@ -39,14 +58,59 @@ function success(e) {
 
 <body>
 
+<div id="inputContainer">
+
+    <h3>Enter Zipcode</h3>
+<input type="text" id="lat" value="Enter Latitude">
+<input type="text" id="lon" value="Enter Longitude">
+
+<button id="button" onclick="submitBtn()">Submit</button>
+
+<p id="userOutput"></p>
+
+</div>
 <div id="container">
 
-<h1>Air Lines</h1>
+<h1>City of New Haven</h1>
 
 <div id="result"></div>
 
 </div>
 
 </body>
+
+<style>
+
+body{
+	background-color: lightblue;
+	border: 1px solid black;
+    margin: 10px;
+    float: left;
+    padding: 30px;
+    text-align: center;
+    background-color: lightgray;
+}
+
+h3{
+	text-align: center;
+}
+
+#inputContainer{
+	text-align: center;
+	background-color: white;
+	padding-top:50px;
+	padding-bottom:50px;
+}
+
+#result {
+    border: 1px solid black;
+    margin: 10px;
+    float: left;
+    padding: 30px;
+    text-align: center;
+    background-color: lightgray;
+}
+
+</style>
 
 </html>
