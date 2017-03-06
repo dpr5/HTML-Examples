@@ -16,7 +16,7 @@ window.onload = function() {
   var lon = "&long=" + lonInput;
   var latInput="";
   var lonInput="";
-  var newURL = url + lat + lon
+  var newURL = "https://seeclickfix.com/open311/v2/29/requests.json" + lat + lon;
   
 
   $.ajax({
@@ -42,6 +42,7 @@ function success(e) {
   $('#result').html(result);
 }
 
+
 function submitBtn()
 	{
 		var latInput = $("#lat").val();
@@ -60,7 +61,7 @@ function submitBtn()
 
 <div id="inputContainer">
 
-    <h3>Enter Zipcode</h3>
+    <h3>Enter Latitude and Longitude Data</h3>
 <input type="text" id="lat" value="Enter Latitude">
 <input type="text" id="lon" value="Enter Longitude">
 
@@ -71,7 +72,7 @@ function submitBtn()
 </div>
 <div id="container">
 
-<h1>City of New Haven</h1>
+<h1>City of New Haven, Connecticut</h1>
 
 <div id="result"></div>
 
@@ -114,3 +115,4 @@ h3{
 </style>
 
 </html>
+
